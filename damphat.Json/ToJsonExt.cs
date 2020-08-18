@@ -1,5 +1,7 @@
 using System.Text;
 using System.Collections;
+using System;
+using System.Globalization;
 
 namespace damphat {
     internal static class ToJsonExt
@@ -120,7 +122,7 @@ namespace damphat {
                 case string s: return WriteString(sb, s);
                 case IDictionary dict: return WriteObject(sb, dict, indent, indentLevel);
                 case IEnumerable list: return WriteArray(sb, list, indent, indentLevel);
-                default: return sb.Append(o);
+                default: return sb.Append(Convert.ToString(o, CultureInfo.InvariantCulture));
             }
         }
 
