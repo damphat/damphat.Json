@@ -1,22 +1,23 @@
-using System.Text;
-using System.Collections;
 using System;
+using System.Collections;
 using System.Globalization;
+using System.Text;
 
-namespace damphat {
-    internal static class ToJsonExt
+namespace damphat.Json
+{
+    internal static class Utils
     {
-        private static StringBuilder WriteIndent(StringBuilder sb, int indent, int indentLevel)
+        private static void WriteIndent(StringBuilder sb, int indent, int indentLevel)
         {
             sb.AppendLine();
-            return sb.Append(' ', indentLevel * indent);
+            sb.Append(' ', indentLevel * indent);
         }
 
         private static char Hex(int c)
         {
             return c < 10 ? (char) ('0' + c) : (char) ('a' + (c - 10));
         }
-        
+
         private static StringBuilder WriteString(StringBuilder sb, string s)
         {
             sb.Append('"');
@@ -64,9 +65,9 @@ namespace damphat {
             return sb.Append('"');
         }
 
-        private static StringBuilder WriteKey(StringBuilder sb, string key)
+        private static void WriteKey(StringBuilder sb, string key)
         {
-            return WriteString(sb, key);
+            WriteString(sb, key);
         }
 
         private static StringBuilder WriteObject(StringBuilder sb, IDictionary dict, int indent, int indentLevel)
@@ -83,7 +84,9 @@ namespace damphat {
 
                 WriteKey(sb, e.Key.ToString());
 
-                sb.Append(": ");
+                sb.Append(':');
+                if (indent > 0) sb.Append(' ');
+
                 Write(sb, e.Value, indent, indentLevel + 1);
             }
 
@@ -113,7 +116,7 @@ namespace damphat {
             return sb;
         }
 
-        private static StringBuilder Write(StringBuilder sb, object o, int indent, int indentLevel)
+        public static StringBuilder Write(StringBuilder sb, object o, int indent, int indentLevel)
         {
             switch (o)
             {
@@ -124,11 +127,6 @@ namespace damphat {
                 case IEnumerable list: return WriteArray(sb, list, indent, indentLevel);
                 default: return sb.Append(Convert.ToString(o, CultureInfo.InvariantCulture));
             }
-        }
-
-        public static string ToJson(this object o, int indent = 2)
-        {
-            return Write(new StringBuilder(), o, indent, 0).ToString();
         }
     }
 }
