@@ -5,7 +5,7 @@ using System.Text;
 
 namespace damphat.Json
 {
-    internal static class Utils
+    internal static class Writer
     {
         private static void WriteIndent(StringBuilder sb, int indent, int indentLevel)
         {

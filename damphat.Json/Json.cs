@@ -1,18 +1,19 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Text;
+using damphat.Json.Language;
 
 namespace damphat.Json
 {
     public static class JSON
     {
-        public static string Stringify(object o, int indent = 0)
+        public static string Stringify(object obj, int indent = 0)
         {
-            return Utils.Write(new StringBuilder(), o, indent, 0).ToString();
+            return Writer.Write(new StringBuilder(), obj, indent, 0).ToString();
         }
 
-        public static object Parse(string src)
+        public static object Parse(string src, Dictionary<string, object> context = null)
         {
-            throw new NotImplementedException();
+            return new JsonParser(src, context).Parse();
         }
     }
 }
