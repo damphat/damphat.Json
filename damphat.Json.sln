@@ -7,11 +7,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "damphat.Json", "damphat.Jso
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "damphat.Json.Tests", "damphat.Json.Tests\damphat.Json.Tests.csproj", "{0DB12EDB-2B42-44C7-A2FB-4B7A8C39C356}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "damphat.Json.Console", "damphat.Json.Console\damphat.Json.Console.csproj", "{7418BA67-4190-46DA-AD80-20851CCBEE25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "damphat.Json.Console", "damphat.Json.Console\damphat.Json.Console.csproj", "{7418BA67-4190-46DA-AD80-20851CCBEE25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "damphat.Json.Win", "damphat.Json.Win\damphat.Json.Win.csproj", "{6E5CC631-3EF4-43F5-BCD3-EC685CFB7129}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "damphat.Json.Win", "damphat.Json.Win\damphat.Json.Win.csproj", "{6E5CC631-3EF4-43F5-BCD3-EC685CFB7129}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demos", "Demos", "{F21CC29E-33D3-4D4A-80EB-87BC73FC1CDC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5FBBDB26-8D39-47E6-920B-07A72EE8D504}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
