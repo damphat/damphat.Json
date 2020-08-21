@@ -4,17 +4,18 @@ using damphat.Json.Language.Utils;
 namespace damphat.Json.Language
 {
     using Dict = Dictionary<string, object>;
+    using IDict = IDictionary<string, object>;
 
     internal class JsonParser
     {
-        public static Dict DefaultContext = new Dict();
-        private Dict context;
+        public static IDict DefaultContext = new Dict();
+        private IDict context;
         private readonly PathStack path = new PathStack();
 
         private readonly PeekableLexer lexer;
         private Token t;
 
-        public JsonParser(string src, Dict context)
+        public JsonParser(string src, IDict context)
         {
             lexer = new PeekableLexer(src, 0, 1);
             t = lexer.Peek(0);

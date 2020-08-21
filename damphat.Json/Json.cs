@@ -11,7 +11,7 @@ namespace damphat.Json
             return Writer.Write(new StringBuilder(), obj, indent, 0).ToString();
         }
 
-        public static object Parse(string src, Dictionary<string, object> context = null)
+        public static object Parse(string src, IDictionary<string, object> context = null)
         {
             return new JsonParser(src, context).Parse();
         }
