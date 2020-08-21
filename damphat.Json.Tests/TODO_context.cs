@@ -1,4 +1,6 @@
-﻿using Xunit;
+﻿using System;
+using System.Collections.Generic;
+using Xunit;
 
 namespace damphat.Json.Tests
 {
@@ -11,12 +13,13 @@ namespace damphat.Json.Tests
             Assert.NotEqual(1.0, JSON.Parse("x"));
         }
 
-        [Fact(Skip = "v1")]
-        public void Can_be_an_object_of_generic_IDictionary()
+        [Fact]
+        public void Context_should_be_more_generic_IDictionary()
         {
-            // IDictionary<string, object> context = new Dictionary<string, object>();
-            // JSON.Parse("", context)
-            Assert.True(false);
+            IDictionary<string, object> context = new Dictionary<string, object>();
+            context["PI"] = Math.PI;
+
+            Assert.Equal(Math.PI, JSON.Parse(" PI ", context));
         }
 
         [Fact(Skip = "v2")]
