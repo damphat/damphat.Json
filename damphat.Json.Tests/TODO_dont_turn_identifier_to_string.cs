@@ -5,7 +5,7 @@ namespace damphat.Json.Tests
 {
     public class TODO_dont_turn_identifier_to_string
     {
-        [Fact]
+        [Fact(Skip = "v1")]
         public void Get_unknown_identifier_throw_exception()
         {
             Assert.Throws<ParserException>(() => JSON.Parse("name"));

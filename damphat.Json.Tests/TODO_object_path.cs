@@ -7,7 +7,7 @@ namespace damphat.Json.Tests
 {
     public class TODO_object_path
     {
-        [Fact]
+        [Fact(Skip = "v1")]
         public void Allow_path_if_not_overwrite_value()
         {
             var actual = JSON.Parse("{a/x:1, a/y:2}");
@@ -15,7 +15,7 @@ namespace damphat.Json.Tests
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
+        [Fact(Skip = "v1")]
         public void Do_not_split_a_path_of_string()
         {
             var obj = (IDictionary) JSON.Parse("{'a/x':1}");
@@ -30,7 +30,7 @@ namespace damphat.Json.Tests
             Assert.Equal(JSON.Parse("{x:x}", context), JSON.Parse("{x}", context));
         }
 
-        [Fact]
+        [Fact(Skip = "v1")]
         public void Shorthand_for_path_is_not_allow()
         {
             var context = new Dictionary<string, object> {{"x", 1.0}};

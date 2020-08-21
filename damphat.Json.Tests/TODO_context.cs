@@ -4,14 +4,14 @@ namespace damphat.Json.Tests
 {
     public class TODO_context
     {
-        [Fact]
+        [Fact(Skip = "v1")]
         public void Do_not_share_variable_between_parse_calls()
         {
             JSON.Parse("x = 1");
             Assert.NotEqual(1.0, JSON.Parse("x"));
         }
 
-        [Fact]
+        [Fact(Skip = "v1")]
         public void Can_be_an_object_of_generic_IDictionary()
         {
             // IDictionary<string, object> context = new Dictionary<string, object>();
@@ -19,7 +19,7 @@ namespace damphat.Json.Tests
             Assert.True(false);
         }
 
-        [Fact(Skip = "big idea")]
+        [Fact(Skip = "v2")]
         public void Idea_engine_context_proto()
         {
             // var context = new {PI = 3.14};

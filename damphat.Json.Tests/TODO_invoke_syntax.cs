@@ -6,7 +6,7 @@ namespace damphat.Json.Tests
 {
     public class TODO_invoke_syntax
     {
-        [Fact]
+        [Fact(Skip = "v1")]
         public void InvokeFunc()
         {
             var context = new Dictionary<string, object>();
@@ -17,7 +17,7 @@ namespace damphat.Json.Tests
             Assert.Equal(8.0, actual);
         }
 
-        [Fact]
+        [Fact(Skip = "v1")]
         public void InvokeMethod()
         {
             var actual = JSON.Parse("x = 'a';  x.ToUpper()");
